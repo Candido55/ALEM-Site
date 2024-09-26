@@ -1,0 +1,205 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F2F2F2;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+header {
+    width: 50%;
+    margin: -30px auto;
+    /* Centraliza o header horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    /* Garante que o logo e a nav fiquem lado a lado */
+    align-items: center;
+    /* Centraliza verticalmente os itens do header */
+}
+
+nav a {
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    margin-left: 20px;
+    /* Espaçamento entre os itens do nav */
+    color: #2C3B59;
+    /* Define a cor dos links */
+    position: relative;
+    /* Necessário para o efeito de tracejado */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* Posiciona o tracejado um pouco abaixo do link */
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px dashed #2C3B59;
+    /* Cria o tracejado */
+    transform: scaleX(0);
+    /* Inicialmente invisível */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    /* Transição suave */
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    /* Aparece o tracejado ao passar o mouse */
+    transform-origin: left;
+    /* Expande da esquerda para a direita */
+}
+
+.logo_site {
+    width: 172px;
+    height: auto;
+}
+
+.logo_site img {
+    width: 100%;
+}
+
+/* Centralizar a seção na página */
+.contact_form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura total da tela */
+    padding: 20px;
+    background-color: #f9f9f9; /* Cor de fundo suave */
+}
+
+.contact_form form {
+    background-color: white; /* Fundo do formulário */
+    padding: 40px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Estilização dos elementos de input e textarea */
+.contact_form form div {
+    margin-bottom: 20px;
+}
+
+.contact_form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.contact_form input, 
+.contact_form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Garantir que o padding não ultrapasse o limite da caixa */
+}
+
+.contact_form textarea {
+    height: 100px;
+    resize: none; /* Impede o redimensionamento da caixa de mensagem */
+}
+
+/* Estilo do botão */
+.contact_form button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.contact_form button:hover {
+    background-color: #0056b3;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #3353b5; /* Cor de hover para os links */
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+/* Estilo dos ícones de redes sociais */
+.footer-social {
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #3353b5; /* Cor de hover para os ícones */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .contact_form form {
+        padding: 20px;
+    }
+}

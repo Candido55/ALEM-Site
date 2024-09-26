@@ -1,0 +1,377 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #F2F2F2;
+    font-family: 'Poppins', Arial, sans-serif;
+}
+
+header {
+    width: 50%;
+    margin: -30px auto;
+    /* Centraliza o header horizontalmente */
+    display: flex;
+    justify-content: space-between;
+    /* Garante que o logo e a nav fiquem lado a lado */
+    align-items: center;
+    /* Centraliza verticalmente os itens do header */
+}
+
+nav a {
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+    margin-left: 20px;
+    /* Espaçamento entre os itens do nav */
+    color: #2C3B59;
+    /* Define a cor dos links */
+    position: relative;
+    /* Necessário para o efeito de tracejado */
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    /* Posiciona o tracejado um pouco abaixo do link */
+    width: 100%;
+    height: 2px;
+    border-bottom: 2px dashed #2C3B59;
+    /* Cria o tracejado */
+    transform: scaleX(0);
+    /* Inicialmente invisível */
+    transform-origin: right;
+    transition: transform 0.3s ease;
+    /* Transição suave */
+}
+
+nav a:hover::after {
+    transform: scaleX(1);
+    /* Aparece o tracejado ao passar o mouse */
+    transform-origin: left;
+    /* Expande da esquerda para a direita */
+}
+
+.logo_site {
+    width: 172px;
+    height: auto;
+}
+
+.logo_site img {
+    width: 100%;
+}
+
+.presentation {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 50px;
+    gap: 30px; /* Espaçamento entre a imagem e o texto */
+}
+
+.presentation_image{
+    position: relative;
+    left: -25%;
+}
+
+.presentation_image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10000px;
+}
+
+.presentation_text {
+    max-width: 50%;
+    margin-left: -20%;
+}
+
+.presentation_text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.presentation_text p {
+    font-size: 21px;
+    line-height: 1.3;
+    color: #555;
+}
+
+.visao {
+    display: flex;
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 50px;
+    gap: 30px; /* Espaçamento entre o texto e o GIF */
+}
+
+.visao-text {
+    max-width: 50%;
+}
+
+.visao-text h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.visao-text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.visao-text ul li {
+    font-size: 21px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    text-align: justify;
+    color: #555;
+}
+
+
+.visao_gif img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1000px;
+}
+
+.visao-text ul li {
+    font-size: 21px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    color: #555;
+    list-style: none; /* Remove os marcadores de lista */
+    display: flex;
+    align-items: center; /* Alinha o ícone com o texto */
+}
+
+.visao-text ul li img {
+    margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+    width: 28px; /* Tamanho do ícone */
+    height: 28px; /* Tamanho do ícone */
+}
+
+.mission {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 50px;
+    gap: 30px; /* Espaço entre o texto e o GIF */
+}
+
+.mission_txt {
+    max-width: 600px;
+}
+
+.mission_txt h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.mission_txt ul {
+    list-style-type: none; /* Remove os marcadores padrão da lista */
+    padding: 0;
+}
+
+.mission_txt ul li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+    display: flex;
+    align-items: center; /* Alinha o ícone com o texto */
+}
+
+.mission_txt ul li img {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    width: 28px; /* Tamanho do ícone */
+    height: 28px; /* Tamanho do ícone */
+}
+
+.mission_gif img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1000px;
+}
+
+.tracos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.tracos_item {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    border: 1px solid #2C3B59;
+    overflow: hidden;
+}
+
+.tracos_item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -30px; /* O pulso começa fora do elemento */
+    height: 100%;
+    width: 30px; /* Largura do pulso */
+    background-color: #F4BC4F; /* Cor da corrente elétrica */
+    transition: left 0.8s linear; /* Controla a velocidade do pulso */
+}
+
+#traco_1 {
+    width: 30%;
+}
+
+#traco_2 {
+    width: 60%;
+}
+
+#traco_3 {
+    width: 40%;
+}
+
+.tracos_item.active::before {
+    left: 100%; /* Faz o pulso percorrer toda a barra */
+}
+
+.valores{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.valores h1{
+    text-align: center;
+    font-size: 40px;
+}
+
+.valores p{
+    font-size: 21px;
+}
+
+.valores ul{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.valores ul li{
+    max-width: 40%;
+    font-size: 20px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.valores ul li img {
+    margin-right: 10px; /* Espaço entre o ícone e o texto */
+    width: 28px; /* Tamanho do ícone */
+    height: 28px; /* Tamanho do ícone */
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-links,
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    margin: 20px;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #3353b5; /* Cor de hover para os links */
+}
+
+.footer-contact p {
+    margin: 5px 0;
+}
+
+/* Estilo dos ícones de redes sociais */
+.footer-social {
+    margin-top: 20px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #3353b5; /* Cor de hover para os ícones */
+}
+
+
+
+
+/* Tornar o layout responsivo */
+@media (max-width: 768px) {
+    .presentation {
+        flex-direction: column; /* Alinha verticalmente em telas menores */
+        text-align: center;
+    }
+
+    .presentation_image img {
+        max-width: 80%;
+    }
+
+    .visao {
+        flex-direction: column; /* Alinha verticalmente em telas menores */
+        text-align: center;
+    }
+
+    .visao_gif img {
+        max-width: 80%; /* Ajusta o tamanho da imagem no mobile */
+    }
+
+    .mission {
+        flex-direction: column; /* Empilha os itens verticalmente em telas menores */
+        text-align: center;
+    }
+
+    .mission_gif img {
+        max-width: 80%;
+    }
+
+}
